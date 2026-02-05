@@ -4,6 +4,12 @@ author: Lorenzo Rizzotti
 description: UCR ITS BearHelp ticket response templates
 
 matches:
+  - trigger: ":its-signature"
+    replace: |
+      Thank you,
+      Lorenzo Rizzotti
+      UCR BearHelp
+      951-827-4848
   - trigger: ":its-voicemail-followup"
     form: |
       Hi,

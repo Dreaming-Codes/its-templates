@@ -4,6 +4,8 @@ author: Lorenzo Rizzotti
 description: UCR ITS BearHelp ticket response templates
 
 matches:
+  - trigger: ":its-ticket-closing"
+    replace: Please be aware that if we do not receive a reply this ticket will be closing.
   - trigger: ":its-signature"
     replace: |
       Thank you,

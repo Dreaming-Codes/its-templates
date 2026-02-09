@@ -4,6 +4,17 @@ author: Lorenzo Rizzotti
 description: UCR ITS BearHelp ticket response templates
 
 matches:
+  - trigger: ":its-escalated"
+    replace: |
+      Hi,
+
+      Thanks for reaching out. We weren't able to help you with your inquiry during our call, so I've escalated your ticket to a specialist.
+      If you have any new details, just reply to this e-mail and we'll add them to the case.
+
+      Thank you,
+      Lorenzo Rizzotti
+      UCR BearHelp
+      951-827-4848
   - trigger: ":its-ticket-closing"
     replace: Please be aware that if we do not receive a reply this ticket will be closing.
   - trigger: ":its-signature"

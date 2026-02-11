@@ -23,25 +23,36 @@ matches:
       Lorenzo Rizzotti
       UCR BearHelp
       951-827-4848
-  - trigger: ":its-voicemail-followup"
-    form: |
+  - trigger: ":its-voicemail"
+    replace: |
       Hi,
 
       My name is Lorenzo from UCR ITS BearHelp. We tried calling you earlier today but weren't able to reach you.
 
       Could you please let us know a good time to give you a call back?
 
-      Alternatively, you can contact our office Monday through Friday, 8am to 5pm at 951-827-4848. When calling, please reference ticket number: [[ticket_number]]
+      Alternatively, you can contact our office Monday through Friday, 8am to 5pm at 951-827-4848. When calling, please reference your ticket number.
 
       Thank you,
       Lorenzo Rizzotti
       UCR BearHelp
       951-827-4848
-    vars:
-      - name: ticket_number
-        type: text
-        params:
-          placeholder: "ticket number"
+  - trigger: ":its-2-voicemail"
+    replace: |
+      Hi,
+
+      My name is Lorenzo from UCR ITS BearHelp. We tried calling you earlier today but weren't able to reach you.
+
+      Could you please let us know a good time to give you a call back?
+
+      Alternatively, you can contact our office Monday through Friday, 8am to 5pm at 951-827-4848. When calling, please reference your ticket number.
+
+      Please note that if we do not receive a response your ticket will be closing.
+
+      Thank you,
+      Lorenzo Rizzotti
+      UCR BearHelp
+      951-827-4848
 
   # === TICKET CREATED ACKNOWLEDGMENT ===
   - trigger: ":its-ticket-created"

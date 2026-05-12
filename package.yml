@@ -23,7 +23,7 @@ matches:
       Lorenzo Rizzotti
       UCR BearHelp
       951-827-4848
-  - trigger: ":its-voicemail"
+  - trigger: ":its-vm1"
     replace: |
       Hi,
 
@@ -37,7 +37,7 @@ matches:
       Lorenzo Rizzotti
       UCR BearHelp
       951-827-4848
-  - trigger: ":its-2-voicemail"
+  - trigger: ":its-vm2"
     replace: |
       Hi,
 
@@ -54,6 +54,18 @@ matches:
       UCR BearHelp
       951-827-4848
 
+  - trigger: ":its-vm3"
+    replace: |
+      Hello,
+
+      We have not heard back from you after several attempts to contact you. We will presume your issue is now resolved and working correctly.
+
+      This ticket will be closed and marked as resolved. If you need assistance in the future, call us at 951-827-4848 or submit a ticket at https://its.ucr.edu
+
+      Thank you,
+      Lorenzo
+      UCR BearHelp
+      951-827-4848
   # === TICKET CREATED ACKNOWLEDGMENT ===
   - trigger: ":its-ticket-created"
     form: |
@@ -80,32 +92,6 @@ matches:
           placeholder: "ticket number"
 
   # === FOLLOW-UP TEMPLATES ===
-  - trigger: ":its-followup"
-    form: |
-      Hi [[user_name]],
-
-      I'm following up on ticket #[[ticket_number]] regarding [[issue_description]].
-
-      Could you please let us know if this issue has been resolved, or if you still need assistance?
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: user_name
-        type: text
-        params:
-          placeholder: "user's name"
-      - name: ticket_number
-        type: text
-        params:
-          placeholder: "ticket number"
-      - name: issue_description
-        type: text
-        params:
-          placeholder: "brief description of the issue"
-
   - trigger: ":its-still-having-issue"
     replace: |
       Hello,
@@ -120,57 +106,6 @@ matches:
       951-827-4848
 
   # === TICKET CLOSURE TEMPLATES ===
-  - trigger: ":its-closure-info-needed"
-    form: |
-      Hi [[user_name]],
-
-      Thank you for contacting ITS BearHelp. To better assist you, could you please provide:
-      - Your full name
-      - Date of birth
-      - A good phone number to call you
-
-      Simply reply to this email and we will be in contact soon.
-
-      Alternatively, you can contact our office Monday through Friday, 8am to 5pm. When calling, please reference ticket #[[ticket_number]].
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: user_name
-        type: text
-        params:
-          placeholder: "user's name"
-      - name: ticket_number
-        type: text
-        params:
-          placeholder: "ticket number"
-
-  - trigger: ":its-no-answer"
-    form: |
-      Hi [[user_name]],
-
-      Thank you for contacting ITS BearHelp. We tried calling you earlier but weren't available.
-
-      Could you please provide a good time for us to call you back?
-
-      Alternatively, contact our office Monday through Friday, 8am to 5pm at 951-827-4848. Reference ticket #[[ticket_number]] when calling.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: user_name
-        type: text
-        params:
-          placeholder: "user's name"
-      - name: ticket_number
-        type: text
-        params:
-          placeholder: "ticket number"
-
   - trigger: ":its-closed-no-answer"
     replace: |
       Hi,
@@ -183,35 +118,11 @@ matches:
       UCR BearHelp
       951-827-4848
 
-  - trigger: ":its-resolved-spot"
+  - trigger: ":its-resolved"
     replace: |
       Hi,
 
       I'm pleased we were able to resolve your issue.
-      This ticket will be closed. If you need assistance in the future, please call us at 951-827-4848 or 'Submit a Ticket' at the https://its.ucr.edu portal.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-inquiry-close"
-    replace: |
-      Hi,
-
-      I'm pleased we were able to assist you.
-      This ticket will be closed. If you need assistance in the future, please call us at 951-827-4848 or 'Submit a Ticket' at the https://its.ucr.edu portal.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-resolved-long-process"
-    replace: |
-      Hello,
-
-      Thank you for your cooperation and patience throughout the process of resolving your issue.
       This ticket will be closed. If you need assistance in the future, please call us at 951-827-4848 or 'Submit a Ticket' at the https://its.ucr.edu portal.
 
       Thank you,
@@ -242,47 +153,6 @@ matches:
 
       Thank you,
       Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-confirm-resolved-user"
-    replace: |
-      Hi,
-
-      Thank you for letting us know your issue is resolved. We will now close the ticket.
-
-      If you have any other questions, contact ITS BearHelp Monday through Friday, 8am to 5pm.
-
-      Have a great day!
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-confirm-resolved-user-formal"
-    replace: |
-      Good morning,
-
-      Thank you for letting us know your issue is resolved. I hope you found our ITS BearHelp support to be friendly and helpful. This ticket is now marked as resolved.
-
-      If you need further assistance, respond to this email to reopen the ticket within 48 hours. Have a great rest of your day!
-
-      Best,
-      Lorenzo
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-no-reply-3-attempts"
-    replace: |
-      Hello,
-
-      We have not heard back from you after several attempts to contact you. We will presume your issue is now resolved and working correctly.
-
-      This ticket will be closed and marked as resolved. If you need assistance in the future, call us at 951-827-4848 or submit a ticket at https://its.ucr.edu
-
-      Thank you,
-      Lorenzo
       UCR BearHelp
       951-827-4848
 
@@ -351,296 +221,6 @@ matches:
       UCR BearHelp
       951-827-4848
 
-  - trigger: ":its-mfa-international"
-    replace: |
-      Hello,
-
-      To add your phone with DUO mobile, please:
-
-      1. Go to myaccount.ucr.edu
-      2. Select "add device" and follow the prompts
-
-      Here is the KB article with detailed instructions:
-      https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=392775811b1a98509c0b844fdd4bcb2e
-
-      Let us know if you need any further assistance.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-mfa-new-phone"
-    replace: |
-      Hello,
-
-      To add your phone with DUO mobile:
-
-      1. Go to myaccount.ucr.edu
-      2. Select "add device" and follow the prompts
-
-      KB Article: https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=392775811b1a98509c0b844fdd4bcb2e
-
-      Note: Please remove your old phone first before adding the new one.
-
-      Let us know if that works for you.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-mfa-policy-change"
-    replace: |
-      Hello,
-
-      Please note that policies assigned as Staff-Limited employees are being terminated and replaced by Staff-Career policies. Your student access will not terminate.
-
-      The only thing showing an end date in your Identity record is the Staff-Limited policy.
-
-      If you have any questions, please let us know.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  # === SOFTWARE REQUESTS ===
-  - trigger: ":its-software-request"
-    replace: |
-      Hello,
-
-      Please visit https://its.ucr.edu/software for detailed instructions on obtaining software through our software catalog.
-
-      Available software packages are based on your student status for academic use.
-
-      If you have further questions or need assistance with downloading, contact our BearHelp desk at (951) 827-4848.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-software-missing-key"
-    replace: |
-      Hello,
-
-      You might have downloaded the software only and not the license key. Please follow these instructions:
-
-      1. Go to: https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=842af6521b882c5063c62fc02a4bcb8a
-      2. Select "license key only" OR "software and license key"
-      3. You will receive an email with software information AND a separate email with the license code
-
-      Let us know if you need any further assistance.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-office365-student"
-    form: |
-      Hello,
-
-      For the Microsoft O365 Student Advantage program, currently enrolled students can download Office for free.
-
-      Please follow the KB article with step-by-step instructions:
-      https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=da7928a61b0e4410453e7592cd4bcbf9
-
-      The email you need to use is: [[student_email]]
-
-      Let us know if that works for you.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: student_email
-        type: text
-        params:
-          placeholder: "first.last@email.ucr.edu"
-
-  # === ACCOUNT SETUP ===
-  - trigger: ":its-account-applicant"
-    replace: |
-      Thank you for contacting the UCR BearHelp desk. I will be happy to help you set up your account.
-
-      To confirm your identity, please provide:
-      - Your NetID
-      - Your Phone Number
-
-      Since security questions may not be set up yet, can you provide:
-      - Your Application ID from your application response email, OR
-      - Your Student ID
-
-      You can retrieve your Application ID at https://apply.universityofcalifornia.edu by logging in.
-
-      Let us know and we will assist you further.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  # === VPN / GLOBALPROTECT ===
-  - trigger: ":its-vpn-mac-not-connecting"
-    replace: |
-      Are you still having issues with the VPN on your Mac? You may need to allow the app in your security settings:
-
-      1. Open System Preferences → Security and Privacy
-      2. Click the lock in the bottom left to make changes
-      3. Click "Allow" next to the Palo Alto Prompt at the bottom
-      4. After a few minutes, the app should prompt for your NetID and password
-      5. If it doesn't, click the globe icon on the Apple bar at the top
-
-      Let us know if that works for you.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-vpn-mac-cert-error"
-    form: |
-      Hello,
-
-      What version of the Mac operating system do you have? GlobalProtect VPN requires macOS 10.13 or above.
-
-      If you have 10.12 or below, you will need to upgrade to a newer version.
-
-      Let us know your macOS version so we can help further.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: mac_version
-        type: text
-        params:
-          placeholder: "macOS version"
-
-  - trigger: ":its-vpn-library-resources"
-    replace: |
-      Hello,
-
-      Students who do not have an R'Card assigned cannot connect to Library resources.
-
-      To get an R'Card:
-      - Go online to https://ucrcard.ucr.edu, OR
-      - Contact the Library directly
-
-      Let us know if you need anything else.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-vpn-webvpn"
-    replace: |
-      Hello,
-
-      We can try using a different VPN. Try going to https://webvpn.ucr.edu in your browser:
-
-      1. Open a browser and navigate to https://webvpn.ucr.edu
-      2. Login with your UCR NetID
-      3. You will be taken to the WebVPN Home page
-      4. To access a site, type its address in the field to the right of the house icon
-      5. To access the Library, type library.ucr.edu
-
-      You will see a small toolbar in the upper corner to control your WebVPN session.
-
-      Let us know if this helps or if you encounter any issues.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  # === PHISHING ===
-  - trigger: ":its-phishing-suspected"
-    replace: |
-      Hello,
-
-      That could be a phishing or malicious email. Please send it to our Security team at abuse@ucr.edu.
-
-      For more information on handling suspicious emails:
-      - KB0011368: https://ucrsupport.service-now.com/ucr_portal?id=kb_article&sys_id=317415081b2784949c0b844fdd4bcbb5
-      - KB0010961: https://ucrsupport.service-now.com/ucr_portal?id=kb_article&sys_id=88f11feadb1f2380a5e7591e5e961964
-
-      Once our security team receives the email information, they can block the sender.
-
-      Let us know if you need anything else.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-phishing-forward"
-    replace: |
-      Hello,
-
-      This email appears to be a phishing scam.
-
-      To report phishing simulations, forward the original email as an attachment:
-      https://ucrsupport.service-now.com/ucr_portal?id=kb_article&sys_id=2af24d121b0b849026bd635bbc4bcba1
-
-      Send the original email as an attachment (not forwarded) to abuse@ucr.edu so our security team can investigate.
-
-      Then delete the email.
-
-      Thank you for your diligence. I will close this incident, but contact the help desk at 951-827-4848 if you have more questions.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  # === OTHER SOFTWARE / APPS ===
-  - trigger: ":its-zoom-display-name"
-    replace: |
-      Hello,
-
-      To change your default display name in Zoom, follow our knowledgebase article:
-      https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=a7e72bfa1b7090549c0b844fdd4bcb38
-
-      Let us know if that helped you.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-lms-sumtotal-error"
-    replace: |
-      Hello,
-
-      Please reach out to the LMS Support team by emailing them at ucrlearning@ucr.edu. They will be able to troubleshoot and let us know if we need to do anything on our end.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-chromebook-software"
-    replace: |
-      Hello,
-
-      Not all software can run on Chromebooks. However, we do have a virtual lab for most software packages.
-
-      Here is the website listing all software available for students:
-      https://keeplearning.ucr.edu/news/2020/03/15/virtual-computer-labs
-
-      Let us know if you have any questions.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
   # === REFERRALS ===
   - trigger: ":its-refer-registrar"
     replace: |
@@ -682,22 +262,6 @@ matches:
       UCR BearHelp
       951-827-4848
 
-  # === SPECIAL REQUESTS ===
-  - trigger: ":its-hotspot-staff"
-    replace: |
-      Hello,
-
-      Thank you for your request. Unfortunately, we do not have hotspots available for Staff/Faculty inventory.
-
-      If this is related to remote work needs, please contact your department's IT support or HR for available resources.
-
-      Let us know if we can assist with anything else.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
   # === SHORT CODES FOR QUICK REPLIES ===
   - trigger: ":its-thanks"
     replace: "You're welcome! Let us know if you need anything else. - Lorenzo, UCR BearHelp 951-827-4848"
@@ -710,158 +274,6 @@ matches:
 
   - trigger: ":its-thanks-contact"
     replace: "Thank you for contacting UCR BearHelp. Contact us at 951-827-4848 or https://its.ucr.edu for assistance."
-
-  - trigger: ":its-bcc-followup"
-    form: |
-      Hello,
-
-      Following up on our previous communication regarding ticket #[[ticket_number]]. Please let us know if you have any updates or still need help with this issue.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: ticket_number
-        type: text
-        params:
-          placeholder: "ticket number"
-
-  - trigger: ":its-kb-notification"
-    form: |
-      Hi,
-
-      Per ticket #[[ticket_number]], I wanted to make you aware of this KB article that may help with your issue:
-
-      [[kb_link]]
-
-      Let us know if you need further assistance.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: ticket_number
-        type: text
-        params:
-          placeholder: "ticket number"
-      - name: kb_link
-        type: text
-        params:
-          placeholder: "KB article URL"
-
-  - trigger: ":its-transfer-rc"
-    replace: |
-      Hello,
-
-      I'm transferring your ticket to our Research Computing team who specializes in this type of request. They will contact you shortly.
-
-      In the meantime, you can reach them directly at rc@ucr.edu.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-transfer-security"
-    replace: |
-      Hello,
-
-      I'm transferring your ticket to our Security team for review. They will contact you shortly with next steps.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-transfer-hr"
-    replace: |
-      Hello,
-
-      I'm transferring your ticket to HR for review. They will contact you shortly.
-
-      For urgent HR matters, you can reach them directly at hr@ucr.edu or 951-827-4424.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-transfer-library"
-    replace: |
-      Hello,
-
-      I'm transferring your ticket to the Library IT team for review. They will contact you shortly.
-
-      You can also reach them directly at library@ucr.edu.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-no-hw-support"
-    replace: |
-      Hello,
-
-      UCR ITS does not provide hardware support for personally owned computers. For hardware issues, I recommend:
-
-      1. Manufacturer warranty/repair services
-      2. Third-party repair shops
-      3. On-campus repair services (check with your college/department)
-
-      For software-related issues, we are happy to help!
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-legacy-system"
-    replace: |
-      Hello,
-
-      The system you mentioned is a legacy system that is no longer actively supported by ITS.
-
-      For alternatives or workarounds, please check with your department or consider:
-
-      1. Modern replacement systems
-      2. Manual processes
-      3. Department-specific solutions
-
-      Let us know if you need guidance on available alternatives.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-
-  - trigger: ":its-dept-resource"
-    form: |
-      Hello,
-
-      For assistance with [[department_name]], I recommend contacting:
-
-      [[contact_info]]
-
-      They specialize in this area and can provide better assistance.
-
-      Let us know if we can help with anything else.
-
-      Thank you,
-      Lorenzo Rizzotti
-      UCR BearHelp
-      951-827-4848
-    vars:
-      - name: department_name
-        type: text
-        params:
-          placeholder: "department name"
-      - name: contact_info
-        type: text
-        params:
-          placeholder: "contact information"
 
   # === CONTACTS REFERENCE ===
   - trigger: ":its-contact-bearhelp"
@@ -902,66 +314,3 @@ matches:
 
   - trigger: ":its-contact-barc"
     replace: "BARC: 951-827-4368 | barc@ucr.edu | https://barc.ucr.edu"
-
-  # === BANNER LOOKUP ===
-  - trigger: ":its-banner-lookup"
-    form: |
-      Banner Lookup - [[student_name]] ([[netid]])
-
-      Address on file:
-      [[address]]
-
-      Phone on file:
-      [[phone]]
-
-      Personal email on file:
-      [[personal_email]]
-
-      First/Last quarters attended:
-      [[quarters_attended]]
-
-      Transferred units from another college/university:
-      [[transfer_info]]
-
-      Degree at UCR and date:
-      [[degree_info]]
-
-      3-4 classes taken at UCR:
-      [[classes]]
-    vars:
-      - name: student_name
-        type: text
-        params:
-          placeholder: "Student name"
-      - name: netid
-        type: text
-        params:
-          placeholder: "NetID"
-      - name: address
-        type: text
-        params:
-          placeholder: "Address from Banner"
-      - name: phone
-        type: text
-        params:
-          placeholder: "Phone number"
-      - name: personal_email
-        type: text
-        params:
-          placeholder: "Personal email"
-      - name: quarters_attended
-        type: text
-        params:
-          placeholder: "e.g., Fall 2020 - Spring 2023"
-      - name: transfer_info
-        type: text
-        params:
-          placeholder: "Transfer institution(s) and units"
-      - name: degree_info
-        type: text
-        params:
-          placeholder: "Degree type and graduation date"
-      - name: classes
-        type: text
-        params:
-          placeholder: "3-4 classes from transcript"
